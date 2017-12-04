@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - fcc-0008 Pomodoro Clock</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class="container" ng-app="mainApp">
+  <div id="edit" ng-controller="editController">
+    <pom-edit></pom-edit>
+  </div>
+  <div id="main" class="" ng-controller="mainController">
+    <img src="https://srbberlin.surge.sh/sites/fcc-0008/pomodoro-center.png"></img>
+    <div id="outerClock">
+      <div id="clock"></div>
+    </div>
+  </div>
+  <div id="footer" class="" ng-controller="footerController">
+    <pom-footer></pom-footer>
+  </div>
+</div>
+
+<!-- CSSgrid -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js'></script>
+<script src='https://npmcdn.com/tether@1.2.4/dist/js/tether.js'></script>
+
+    <script  src="js/index.js"></script>
+
+</body>
+</html>

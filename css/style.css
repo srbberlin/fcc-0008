@@ -1,0 +1,109 @@
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #cccccc;
+  background-image: url("https://srbberlin.surge.sh/sites/fcc-0008/pomodo-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  /*margin: auto;
+  min-height: 200px;
+  background-image: url("https://srbberlin.surge.sh/sites/fcc-0008/pomodo-background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;*/
+}
+
+#edit, #main, #footer {
+  width: 100%;
+}
+
+#main {
+  position: relative;
+  height: 80%;
+  text-align: center;
+  overflow: hidden;
+}
+
+#main img {
+  /*
+  margin-top: 0;
+  display: block;
+  margin: auto;
+  */
+}
+
+#footer {
+  height: 20%;
+  text-align: center;
+}
+
+.btn {
+  margin: 3px;
+  width: 27%;
+}
+
+#outerClock {
+  position: absolute;
+  top: 0;
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+#clock {
+  display: table-cell;
+  vertical-align: middle;
+  z-index: 1000;
+  text-shadow: 4px 4px 8px #000000;
+  font-weight: bold;
+}
+
+input {
+  width: 90%;
+}
+
+#show {
+  width: 60px;
+  height: 60px;
+  background-color: orange;
+  stroke: rgb(255,0,0);
+  stroke-width: 4px;
+}
+
+#hide {
+  width: 20px;
+  height: 20px;
+  background-color: orange;
+  stroke: rgb(255,0,0);
+  stroke-width: 4px;
+}
+
+#msk {
+  z-index: 1000;
+  width: 40%;
+  margin: 5%;
+}
+
+#hide, #typeInMask, #entryInMask, #typeSave, #entrySave {
+  visibility: hidden;
+}
+
+#hide, #show, #msk {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
