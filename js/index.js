@@ -74,7 +74,6 @@
           t = this.entryTypes[i];
           if (t.name === name) {
             t.index = i;
-            //console.log("getType:", t.name);
             return t;
           }
         }
@@ -95,9 +94,7 @@
           e = this.entries[i];
           if (name === e.name) {
             e.index = i;
-            //console.log("getEntry:", e.name);
             return e;
-            break;
           }
         }
         return null;
@@ -109,7 +106,6 @@
           let t = this.entryTypes[i];
           t.index = i;
           res.push(t);
-          //console.log("getTypes:", t.name);
           i++;
         }
         return res;
@@ -120,7 +116,6 @@
         while (i < l) {
           let e = this.entries[i];
           if (! type || i === 0 || type === e.type) {
-            //console.log("getEntries:", e.name);
             e.index = i;
             res.push(e);
           }
@@ -133,7 +128,6 @@
       },
       
       initMasks: function(type, entry) {
-        //console.log("initMasks:", type, entry);
         let lType = type ? this.getType(type) : this.entryTypes[1];
         let lIndex = lType.index === 0 ? 0 : 1;
         let lEntry = entry ? this.getEntry(entry) : this.getEntries(lIndex ? lType.name : null)[lIndex];
@@ -142,19 +136,17 @@
         this.typeDuration = lType.cnt;
         this.typePause = lType.ps;
         this.typeDes = lType.des;
-        this.typeDisabled = lType.index != 0;//!(lType.en);
+        this.typeDisabled = lType.index != 0;
         this.entryName = lEntry.name;
         this.entryIndex = lEntry.index;
         this.entryType = lEntry.index != 0 ? lEntry.type : lType.name;
         this.entryDes = lEntry.des;
-        this.entryDisabled = lEntry.index != 0;//!(lEntry.en);
-        //console.log("initMasks: DONE !!");
+        this.entryDisabled = lEntry.index != 0;
         return [!this.typeDisabled, !this.entryDisabled];
       }
     };
     
     res.initMasks();
-    //console.log("--------\narts: controller DONE !!");
     return res;
   }]);
 
@@ -235,7 +227,6 @@
         };
 
         $scope.selectType = function () {
-          //console.log("--------\nselectType:", arts.typeName);
           let a = arts.initMasks(arts.typeName);
           if (a[0]) {
             $scope.typeSave.css('visibility', 'visible');
@@ -249,18 +240,15 @@
           else {
             $scope.entrySave.css('visibility', 'hidden');
           }
-          //console.log("--------");
         };
 
         $scope.selectEntry = function () {
-          //console.log("--------\nselectEntry:", arts.typeName, arts.entryName);
           if (arts.initMasks(arts.typeName, arts.entryName)[1]) {
             $scope.entrySave.css('visibility', 'visible');
           }
           else {
             $scope.entrySave.css('visibility', 'hidden');
           }
-          //console.log("--------");
         };
         
         $scope.setTypeName = function () {
@@ -361,7 +349,6 @@
         }
   
         function pomoTimer(cnt) {
-          //console.log("pomTimer", cnt, tCnt, tPause);
           if (cnt == tCnt) {
             if (tState === PAUSE) {
               pomoStop();
@@ -378,7 +365,6 @@
             }
           }
           else {
-            //console.log("pomTimer", cnt);
             calcAttr(cnt);
             pomoFact += tStep; 
             pomoResize();
@@ -387,7 +373,6 @@
 
         function pomoStart () {
           if (!tId) {
-            //console.log("pomStart");
             tState = WORK;
             calcAttr(0);
             tCnt = arts.typeDuration;
@@ -400,7 +385,6 @@
 
         function pomoStop () {
           if (tId) {
-            //console.log("pomStop");
             tState = IDLE;
             calcAttr(0);
             $interval.cancel(tId);

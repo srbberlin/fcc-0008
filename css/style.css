@@ -11,7 +11,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: #cccccc;
-  background-image: url("https://srbberlin.surge.sh/sites/fcc-0008/pomodo-background.jpg");
+  background-image: url("../img/pomodo-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -19,12 +19,6 @@ body {
 .container {
   position: relative;
   height: 100%;
-  /*margin: auto;
-  min-height: 200px;
-  background-image: url("https://srbberlin.surge.sh/sites/fcc-0008/pomodo-background.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;*/
 }
 
 #edit, #main, #footer {
@@ -36,14 +30,6 @@ body {
   height: 80%;
   text-align: center;
   overflow: hidden;
-}
-
-#main img {
-  /*
-  margin-top: 0;
-  display: block;
-  margin: auto;
-  */
 }
 
 #footer {
