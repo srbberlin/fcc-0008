@@ -1,7 +1,6 @@
 const gulp = require('gulp')
 const browserSync = require('browser-sync')
 
-
 var config = {
   base:   __dirname + '/',
   html:   __dirname + '/**/*.html',
