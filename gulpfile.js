@@ -11,12 +11,11 @@ var config = {
 }
 
 function reload () {
-  console.log('reload');
+  console.log('reload')
   browserSync.reload()
 }
 
-function serve (cp) {
-  console.log('serve')
+function serve (cb) {
   browserSync({
     server: config.base
   })
@@ -26,7 +25,7 @@ function serve (cp) {
   gulp.watch(config.js, reload)
   gulp.watch(config.img, reload)
 
-  cp();
+  cb()
 }
 
 exports.default = serve
